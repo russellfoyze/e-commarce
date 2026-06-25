@@ -66,7 +66,7 @@ const collection = () => {
 
   useEffect(()=>{
     applyFilter();
-  },[category, subCategory, search , showSearch])
+  },[category, subCategory, search , showSearch, products])
 
   useEffect(()=>{
     sortProduct();
@@ -101,33 +101,56 @@ const collection = () => {
               <input
                 className="w-3 "
                 type="checkbox"
-                value={"Men"}
+                value={"Tshirt"}
                 onChange={toggleCategory}
               />
-              Men
+              T-shirt
             </p>
             <p className="flex gap-2">
               <input
                 className="w-3 "
                 type="checkbox"
-                value={"Women"}
+                value={"Dropshoulder"}
                 onChange={toggleCategory}
               />
-              Women
+              Drop Shoulder Tees
             </p>
             <p className="flex gap-2">
               <input
                 className="w-3 "
                 type="checkbox"
-                value={"Kids"}
+                value={"jersey"}
                 onChange={toggleCategory}
               />
-              Kids
+              Jersey
             </p>
           </div>
         </div>
         {/* Sub Category Filter */}
-        <div
+              {/* Sub Category Filter */}
+              <div
+          className={`border border-gray-300 pl-5 py-5 mt-6 ${
+            showFilter ? "" : "hidden"
+          } sm:block`}
+        >
+          <p className="mb-3 text-sm font-medium">Type</p>
+          <div className="flex flex-col gap-2 text-sm font-light text-gray-700">
+            {[...new Set(products.flatMap(product =>
+              Array.isArray(product.subCategory) ? product.subCategory : [product.subCategory]
+            ))].filter(Boolean).map(subCat => (
+              <p key={subCat} className="flex gap-2">
+                <input
+                  className="w-3 "
+                  type="checkbox"
+                  value={subCat}
+                  onChange={toggleSubCategory}
+                />
+                {subCat}
+              </p>
+            ))}
+          </div>
+        </div>
+        {/* <div
           className={`border border-gray-300 pl-5 py-5 mt-6 ${
             showFilter ? "" : "hidden"
           } sm:block`}
@@ -147,7 +170,7 @@ const collection = () => {
               Hoddie
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
       {/* Right Side */}
       <div className="flex-1">
@@ -167,8 +190,10 @@ const collection = () => {
               key={index}
               name={item.name}
               id={item._id}
+              discount={item.discount}
               price={item.price}
               image={item.image}
+              subCategory ={item.subCategory}
             />
           ))}
         </div>

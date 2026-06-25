@@ -8,9 +8,7 @@ const footer = () => {
         <div>
           <img src={assets.logo} className="mb-5 w-32" alt="" />
           <p className="w-full md:w-2/3 text-gray-600">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-            asperiores architecto non sit. Maiores nam odio temporibus deserunt!
-            Provident
+            We are committed to providing high-quality products and excellent customer service. Our team works tirelessly to ensure your shopping experience is nothing short of exceptional.
           </p>
         </div>
         <div>

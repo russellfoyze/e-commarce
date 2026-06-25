@@ -4,10 +4,10 @@ import Title from './title'
 
 const cartTotal = () => {
     const { currency, delivery_fee, getCartAmount } = useContext(ShopContext);
-    const [selectedFee, setSelectedFee] = useState(80); 
+    const [selectedFee, setSelectedFee] = useState(delivery_fee.dhaka); 
 
     const handleFeeChange = (e) => {
-        setSelectedFee(e.target.value === 'dhaka' ? 80 : 130);
+        setSelectedFee(e.target.value === "dhaka" ? delivery_fee.dhaka : delivery_fee.outside);
     };
 
 
@@ -26,21 +26,20 @@ const cartTotal = () => {
             <hr />
             <div className='flex justify-between'>
                 <p>Delivery Fee</p>
-                <select onChange={handleFeeChange}>
+                <div className='flex gap-2'>
+                    <select onChange={handleFeeChange} className='border px-2 py-1'>
                         <option value='dhaka'>Dhaka</option>
                         <option value='outsideDhaka'>Outside Dhaka</option>
                     </select>
                     <p>{currency}{selectedFee}</p>
                 </div>
+                </div>
                 <hr />
                 <div className='flex justify-between'>
                     <b>Total</b>
-                    <b>{currency}{getCartAmount() === 0 ? 0 :getCartAmount() + selectedFee}</b>
-
+                <b>{currency}{getCartAmount() === 0 ? 0 : getCartAmount() + selectedFee}</b>
             </div>
-
         </div>
-      
     </div>
   )
 }

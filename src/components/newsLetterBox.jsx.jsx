@@ -11,9 +11,7 @@ const newsLetterBox = () => {
         Suscribe Now for get 20% Off
       </p>
       <p className="text-gray-400 mt-3">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        asperiores facere, officiis itaque ex tempora repellendus modi
-        excepturi! Perferendis
+        Subscribe to our newsletter to receive updates on new arrivals, special offers, and exclusive deals. Stay connected with the latest trends and never miss out on our promotions.
       </p>
       <form
         onSubmit={onSubmitHandler}

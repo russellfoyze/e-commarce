@@ -8,7 +8,7 @@ const LatestCollection = () => {
   const [latestProducts, setLatestProducts] = useState([]);
   useEffect(() => {
     setLatestProducts(products.slice(0, 10));
-  }, []);
+  }, [products]);
 
 
   return (
@@ -16,7 +16,7 @@ const LatestCollection = () => {
       <div className="text-center py-8 text-3xl">
         <Title text1={"LATEST"} text2={"COLLECTION"} />
         <p className="w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit
+         
         </p>
       </div>
       {/* Rendering products */}
@@ -28,6 +28,7 @@ const LatestCollection = () => {
             image={item.image}
             name={item.name}
             price={item.price}
+            discount={item.discount}
           />
         ))}
       </div>

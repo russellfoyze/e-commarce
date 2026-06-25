@@ -12,12 +12,9 @@ const about = () => {
       <div className='my-10 flex flex-col md:flex-row gap-16'>
         <img className='w-full md:max-w-[450px]' src={assets.about_img} alt="" />
         <div className='flex flex-col justify-center gap-6 md:w-2/4 text-gray-600'>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae ullam mollitia in earum, commodi corrupti vel excepturi iure necessitatibus non voluptas impedit expedita illo sit, enim debitis itaque magni sint?</p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque impedit consequuntur dolore inventore commodi, esse aspernatur harum autem necessitatibus?
-        </p>
-        <b className='text-gray-800'>Our Mission</b>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore ipsum saepe soluta reiciendis magni, natus temporibus, incidunt ut, optio quam repellat harum vitae. Non provident iure nesciunt quidem magni dolor.</p>
+        <p>Welcome to our e-commerce store, where quality meets style. We are dedicated to providing you with the best shopping experience, offering a wide range of products that cater to your needs and preferences.</p>
+        <p>Our mission is to bring you the latest trends and high-quality products at competitive prices. We carefully curate our collection to ensure that every item meets our standards of excellence.</p>
+        <p>With years of experience in the industry, we understand what our customers want. We strive to maintain the highest standards of customer service, ensuring that your shopping experience is smooth, enjoyable, and satisfying.</p>
         </div>
       
 

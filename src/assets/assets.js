@@ -54,10 +54,11 @@ import p_img50 from './p_img50.png'
 import p_img51 from './p_img51.png'
 import p_img52 from './p_img52.png'
 
-
-
+import model from './model.png'
+import bg from './bg.png'
+import wa from './wa.png'
 import logo from './logo.png'
-import hero_img from './hero_img.png'
+import hero_img from './hero_img.jpg'
 import cart_icon from './cart_icon.png'
 import bin_icon from './bin_icon.png'
 import dropdown_icon from './dropdown_icon.png'
@@ -74,9 +75,17 @@ import contact_img from './contact_img.png'
 import razorpay_logo from './razorpay_logo.png'
 import bkash from './bkash.png'
 import cross_icon from './cross_icon.png'
+import home_icon from './home_icon.png'
+import movie_poster from './movie_poster.jpg'
+import anime_poster from './anime_poster.png'
 
 export const assets = {
+    anime_poster,
+    movie_poster,
+    bg,
+    model,
     logo,
+    wa,
     hero_img,
     cart_icon,
     dropdown_icon,
@@ -93,7 +102,63 @@ export const assets = {
     contact_img,
     razorpay_logo,
     bkash,
-    cross_icon
+    cross_icon,
+    home_icon,
+    p_img1,
+    p_img2_1,
+    p_img2_2,
+    p_img2_3,
+    p_img2_4,
+    p_img3,
+    p_img4,
+    p_img5,
+    p_img6,
+    p_img7,
+    p_img8,
+    p_img9,
+    p_img10,
+    p_img11,
+    p_img12,
+    p_img13,
+    p_img14,
+    p_img15,
+    p_img16,
+    p_img17,
+    p_img18,
+    p_img19,
+    p_img20,
+    p_img21,
+    p_img22,
+    p_img23,
+    p_img24,
+    p_img25,
+    p_img26,
+    p_img27,
+    p_img28,
+    p_img29,
+    p_img30,
+    p_img31,
+    p_img32,
+    p_img33,
+    p_img34,
+    p_img35,
+    p_img36,
+    p_img37,
+    p_img38,
+    p_img39,
+    p_img40,
+    p_img41,
+    p_img42,
+    p_img43,
+    p_img44,
+    p_img45,
+    p_img46,
+    p_img47,
+    p_img48,
+    p_img49,
+    p_img50,
+    p_img51,
+    p_img52
 }
 
 export const products = [
@@ -640,6 +705,7 @@ export const products = [
     },
     {
         _id: "aaabt",
+        name: "Men Slim Fit Relaxed Denim Jacket",
         name: "Men Slim Fit Relaxed Denim Jacket",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 320,

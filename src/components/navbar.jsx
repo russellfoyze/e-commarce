@@ -6,12 +6,21 @@ import { useLocation } from 'react-router-dom'
 
 const navbar = () => {
     const [visible , setVisible] = useState(false);
-    const {setShowSearch , getCartCount} = useContext(ShopContext);
+    const {setShowSearch , getCartCount , navigate , setToken , setCartItems } = useContext(ShopContext);
     const location = useLocation()
 
+  const logout = () => {
+    localStorage.removeItem('token')
+    setToken("")
+    setCartItems({})
+    navigate('/login')
+  }
+
+
   return (
-    <div className='flex items-center justify-between py-5 font-medium'>
-     <Link to={'./'}> <img src={assets.logo} className='w-36' alt="" /></Link>
+    <div className={``}>
+    <div className=' flex items-center justify-between py-1 font-medium'>
+     <Link to={'./'}> <img src={assets.logo} className='w-20' alt="" /></Link>
 
       <ul className='hidden sm:flex gap-5 text-sm text-gray-700'>
         
@@ -23,12 +32,12 @@ const navbar = () => {
         <p>Collection</p>
         <hr className='w-2/4 border-none h-[1.5px] bg-gray-700 hidden' />
        </NavLink>
-       <NavLink to='/about' className='flex flex-col item-center gap-1'>
-        <p>About</p>
-        <hr className='w-2/4 border-none h-[1.5px] bg-gray-700 hidden' />
-       </NavLink>
        <NavLink to='/contact' className='flex flex-col item-center gap-1'>
         <p>Contact</p>
+        <hr className='w-2/4 border-none h-[1.5px] bg-gray-700 hidden' />
+       </NavLink>
+       <NavLink to='/user-login' className='flex flex-col item-center gap-1'>
+        <p>My Orders</p>
         <hr className='w-2/4 border-none h-[1.5px] bg-gray-700 hidden' />
        </NavLink>
       </ul>
@@ -37,13 +46,13 @@ const navbar = () => {
         <img onClick={()=>setShowSearch(true)} src={assets.search_icon} className={`w-5 cursor-pointer ${location.pathname.includes('collection')? "visible": 'invisible' }`} alt="" />
 
         <div className='group relative'>
-           <Link to={'/login'}> <img src={assets.profile_icon} className='w-5 cursor-pointer' alt="" /></Link>
+           <Link to={'http://localhost:5174/'}> <img src={assets.profile_icon} className='w-5 cursor-pointer' alt="" /></Link>
 
             <div className='group-hover:block hidden absolute dropdown-menu right-0 pt-4'>
                 <div className='flex flex-col gap-2 w-36 py-3 px5 bg-slate-100 text-gray-500 rounded '>
                     <p className='coursor-pointer hover:text-black ml-5'>My Profile</p>
-                    <p className='coursor-pointer hover:text-black ml-5'>Orders</p>
-                    <p className='coursor-pointer hover:text-black ml-5'>Log Out</p>
+                    <Link to={'/user-login'} className='coursor-pointer hover:text-black ml-5'>My Orders</Link>
+                    <p className='coursor-pointer hover:text-black ml-5' onClick={logout}>Log Out</p>
                 </div>
             </div>
         </div> 
@@ -54,9 +63,10 @@ const navbar = () => {
     <img onClick={()=>setVisible(true)} src={assets.menu_icon} className='w-5 cursor-pointer sm:hidden' alt="" />
       </div>
 
+
       {/* sidebar menu for small screen */}
 
-        <div className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ${visible ? 'w-full': 'w-0'}`}>
+        <div className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all z-[100] ${visible ? 'w-[90%]': 'w-0'}`}>
          <div className='flex flex-col text-gray-600'>
             <div onClick={()=> setVisible(false)} className='flex items-center gap-4 p-3 cursor-pointer'>
             <img src={assets.dropdown_icon} className='h-4 rotate-180' alt="" />
@@ -65,15 +75,19 @@ const navbar = () => {
 
             <NavLink onClick={()=> setVisible(false)}  className='py-2 pl-6 border' to='/'>Home</NavLink>
             <NavLink onClick={()=> setVisible(false)} className='py-2 pl-6 border' to='/collection'>Collection</NavLink>
-            <NavLink onClick={()=> setVisible(false)} className='py-2 pl-6 border' to='/about'>About</NavLink>
             <NavLink onClick={()=> setVisible(false)} className='py-2 pl-6 border' to='/contact'>Contact</NavLink>
+            <NavLink onClick={()=> setVisible(false)} className='py-2 pl-6 border' to='/user-login'>My Orders</NavLink>
             
             </div>   
         </div>
+        
 
 
-    </div>
+        </div>
+        </div>
+    
   )
 }
 
 export default navbar
+
